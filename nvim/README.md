@@ -1,7 +1,5 @@
 # neovim config
 
-minimal neovim configuration in a single `init.lua`. uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management and [rose-pine](https://github.com/rose-pine/neovim) as the colorscheme.
-
 ## general settings
 
 - **leader key:** `Space`
