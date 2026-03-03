@@ -97,13 +97,3 @@ minimal neovim configuration in a single `init.lua`. uses [lazy.nvim](https://gi
 | `gco`  | normal   | add comment below         |
 | `gcA`  | normal   | add comment at end of line |
 
-## plugins
-
-| plugin                  | purpose              |
-|-------------------------|----------------------|
-| `rose-pine/neovim`      | colorscheme          |
-| `hrsh7th/nvim-cmp`      | autocompletion       |
-| `L3MON4D3/LuaSnip`     | snippet engine       |
-| `neovim/nvim-lspconfig` | lsp configuration    |
-| `ibhagwan/fzf-lua`      | fuzzy finder         |
-| `numToStr/Comment.nvim` | code commenting      |
