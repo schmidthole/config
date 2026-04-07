@@ -158,12 +158,11 @@ require("lazy").setup({
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-      require("lspconfig").gopls.setup({
+      vim.lsp.config("*", {
         capabilities = capabilities,
       })
 
-      require("lspconfig").pylsp.setup({
-        capabilities = capabilities,
+      vim.lsp.config("pylsp", {
         settings = {
           pylsp = {
             plugins = {
@@ -178,9 +177,7 @@ require("lazy").setup({
         }
       })
 
-      require("lspconfig").ts_ls.setup({
-        capabilities = capabilities,
-      })
+      vim.lsp.enable({ "gopls", "pylsp", "ts_ls" })
     end,
   },
 
@@ -189,6 +186,26 @@ require("lazy").setup({
     keys = {
       { "<C-p>", function() require("fzf-lua").files() end, desc = "find files" },
       { "<C-g>", function() require("fzf-lua").live_grep() end, desc = "live grep" },
+    },
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
+      { "<leader>o", "<cmd>NvimTreeFindFile<CR>", desc = "Find current file in explorer" },
+    },
+    opts = {
+      view = { width = 35 },
+      filters = { dotfiles = false },
+    },
+  },
+
+  {
+    "karb94/neoscroll.nvim",
+    opts = {
+      mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
     },
   },
 
